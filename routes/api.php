@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch("tasks/{id}", [TaskController::class, "updateTask"]);
     Route::delete("tasks/{id}", [TaskController::class, "delete"]);
     Route::get("/getAuthorizedUserTasks", [TaskController::class, "getAuthorizedUserTasks"]);
+    Route::get("/tasks/search", [TaskController::class, "search"]);
 });
 
-Route::get("/tasks/search", [TaskController::class, "search"]);
