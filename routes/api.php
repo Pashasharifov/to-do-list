@@ -11,9 +11,9 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
-Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
     Route::post('/lists', [ListController::class, 'store']);
     Route::get('/lists', [ListController::class, 'getLists']);
     Route::post("/lists/{id}/tasks", [TaskController::class, 'store']);
